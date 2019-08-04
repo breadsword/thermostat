@@ -18,7 +18,7 @@ private slots:
     void test_output_hysteresis();
 
 private:
-    TemperatureController cont;
+    Thermostat cont;
 
 };
 
@@ -36,7 +36,7 @@ void test_thermostat::test_output_below_set_temperature()
 
     const auto Tin = Tset-0.7;
     const auto controller_output = cont.getOutput(Tin);
-    QVERIFY(controller_output == TemperatureController::ON);
+    QVERIFY(controller_output == Thermostat::ON);
 
 }
 
@@ -47,7 +47,7 @@ void test_thermostat::test_output_above_set_temperature()
 
     const auto Tin = Tset + 1.0;
     const auto controller_output = cont.getOutput(Tin);
-    QVERIFY(controller_output == TemperatureController::OFF);
+    QVERIFY(controller_output == Thermostat::OFF);
 }
 
 #include <boost/range/combine.hpp>
@@ -61,14 +61,14 @@ void test_thermostat::test_output_hysteresis()
     cont.setHysteresis(hysteresis);
 
     const auto Tin = {25.5, 24.9, 24.0, 24.9, 25.01};
-    constexpr auto ON = TemperatureController::ON;
-    constexpr auto OFF = TemperatureController::OFF;
+    constexpr auto ON = Thermostat::ON;
+    constexpr auto OFF = Thermostat::OFF;
     const auto ExpectOut = {OFF, OFF, ON, ON, OFF};
 
     for (const auto tup : boost::combine(Tin, ExpectOut))
     {
         double T;
-        TemperatureController::output_t E;
+        Thermostat::output_t E;
         boost::tie(T, E) = tup;
 
         std::cout << "Tin: " << T << std::endl;

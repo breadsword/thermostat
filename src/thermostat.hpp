@@ -1,7 +1,7 @@
-#ifndef TEMPERATURE_CONTROLLER_HPP_INCLUDED
-#define TEMPERATURE_CONTROLLER_HPP_INCLUDED
+#ifndef THERMOSTAT_HPP_INCLUDED
+#define THERMOSTAT_HPP_INCLUDED
 
-class TemperatureController{
+class Thermostat{
 public:
     void setTargetTemperature(const double _target)
     {
@@ -28,4 +28,4 @@ private:
     bool outputIsOn = false;
 };
 
-#endif //TEMPERATURE_CONTROLLER_HPP_INCLUDED
+#endif //THERMOSTAT_HPP_INCLUDED

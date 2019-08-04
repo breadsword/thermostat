@@ -1,6 +1,6 @@
 #include <thermostat.hpp>
 
-TemperatureController::output_t TemperatureController::getOutput(const double Tsens)
+Thermostat::output_t Thermostat::getOutput(const double Tsens)
 {
     if (outputIsOn)
     {
