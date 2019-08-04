@@ -4,12 +4,12 @@
 
 #include <thermostat.hpp>
 
-class test_temperature_controller : public QObject
+class test_thermostat : public QObject
 {
     Q_OBJECT
 public:
-    test_temperature_controller(){}
-    ~test_temperature_controller(){}
+    test_thermostat(){}
+    ~test_thermostat(){}
 
 private slots:
     void test_set_temperature();
@@ -22,14 +22,14 @@ private:
 
 };
 
-void test_temperature_controller::test_set_temperature()
+void test_thermostat::test_set_temperature()
 {
     const auto T=27.5;
     cont.setTargetTemperature(T);
     QVERIFY(cont.getTargetTemperature() == T);
 }
 
-void test_temperature_controller::test_output_below_set_temperature()
+void test_thermostat::test_output_below_set_temperature()
 {
     const auto Tset = 25.0;
     cont.setTargetTemperature(Tset);
@@ -40,7 +40,7 @@ void test_temperature_controller::test_output_below_set_temperature()
 
 }
 
-void test_temperature_controller::test_output_above_set_temperature()
+void test_thermostat::test_output_above_set_temperature()
 {
     const auto Tset = 25.0;
     cont.setTargetTemperature(Tset);
@@ -52,7 +52,7 @@ void test_temperature_controller::test_output_above_set_temperature()
 
 #include <boost/range/combine.hpp>
 
-void test_temperature_controller::test_output_hysteresis()
+void test_thermostat::test_output_hysteresis()
 {
     const auto Tset = 25.0;
     const auto hysteresis = 0.5; // temperature has to drop by hysteresis before we switch on again, then has to rise until Tset
@@ -76,6 +76,6 @@ void test_temperature_controller::test_output_hysteresis()
     }
 }
 
-QTEST_APPLESS_MAIN(test_temperature_controller)
+QTEST_APPLESS_MAIN(test_thermostat)
 
-#include "test_temperature_controller.moc"
+#include "test_thermostat.moc"

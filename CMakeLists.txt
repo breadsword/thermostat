@@ -23,7 +23,7 @@ add_executable(${EXECUTABLE_NAME} ${EXEC_SOURCES})
 TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} ${LIBRARY_NAME})
 
 LIST( APPEND TESTSOURCES
-    test/test_temperature_controller
+    test/test_thermostat
     )
 
 find_package(Qt5 COMPONENTS Test REQUIRED
