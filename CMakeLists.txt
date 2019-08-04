@@ -6,8 +6,8 @@ SET(CMAKE_CXX_STANDARD 14)
 INCLUDE_DIRECTORIES(${CURRENT_SOURCE_PATH})
 
 LIST(APPEND LIB_SOURCES
-    temperature_controller.hpp
-    temperature_controller.cpp
+    src/temperature_controller.hpp
+    src/temperature_controller.cpp
     )
 
 LIST(APPEND EXEC_SOURCES
