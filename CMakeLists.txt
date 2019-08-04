@@ -23,7 +23,7 @@ add_executable(${EXECUTABLE_NAME} ${EXEC_SOURCES})
 TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} ${LIBRARY_NAME})
 
 LIST( APPEND TESTSOURCES
-    test_temperature_controller
+    test/test_temperature_controller
     )
 
 find_package(Qt5 COMPONENTS Test REQUIRED
@@ -37,12 +37,13 @@ ENABLE_TESTING()
 
 FIND_PACKAGE(Boost REQUIRED)
 
-FOREACH (test ${TESTSOURCES})
-    add_executable(${test} ${test})
-    add_test(${test} ${test})
-    TARGET_INCLUDE_DIRECTORIES(${test} PRIVATE ${Boost_INCLUDE_DIRS})
-    target_link_libraries(${test} PRIVATE
+FOREACH (test_src ${TESTSOURCES})
+    get_filename_component(test_name ${test_src} NAME)
+    add_executable(${test_name} ${test_src})
+    add_test(${test_name} ${test_name})
+    TARGET_INCLUDE_DIRECTORIES(${test_name} PRIVATE ${Boost_INCLUDE_DIRS})
+    target_link_libraries(${test_name} PRIVATE
         Qt5::Test
         ${LIBRARY_NAME}
         )
-ENDFOREACH(test)
+ENDFOREACH(test_src)
