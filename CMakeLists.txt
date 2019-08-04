@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(Temperature_Controller)
+project(Thermostat)
 
 SET(CMAKE_CXX_STANDARD 14)
 INCLUDE_DIRECTORIES(${CURRENT_SOURCE_PATH})
@@ -34,6 +34,8 @@ SET(CMAKE_AUTOMOC ON)
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 ENABLE_TESTING()
+
+FIND_PACKAGE(Boost REQUIRED)
 
 FOREACH (test ${TESTSOURCES})
     add_executable(${test} ${test})
