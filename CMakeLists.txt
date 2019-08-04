@@ -7,7 +7,7 @@ INCLUDE_DIRECTORIES(${CURRENT_SOURCE_PATH})
 
 LIST(APPEND LIB_SOURCES
     src/temperature_controller.hpp
-    src/temperature_controller.cpp
+    src/thermostat.cpp
     )
 
 LIST(APPEND EXEC_SOURCES
@@ -16,7 +16,7 @@ LIST(APPEND EXEC_SOURCES
 
 SET (LIBRARY_NAME ${PROJECT_NAME})
 add_library(${LIBRARY_NAME} ${LIB_SOURCES})
-target_include_directories(${LIBRARY_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${LIBRARY_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 SET (EXECUTABLE_NAME ex_${PROJECT_NAME})
 add_executable(${EXECUTABLE_NAME} ${EXEC_SOURCES})
