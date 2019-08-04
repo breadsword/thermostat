@@ -11,7 +11,7 @@ LIST(APPEND LIB_SOURCES
     )
 
 LIST(APPEND EXEC_SOURCES
-    main.cpp
+    src/main.cpp
     )
 
 SET (LIBRARY_NAME ${PROJECT_NAME})
