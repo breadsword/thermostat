@@ -19,6 +19,11 @@ public:
         hysteresis = _hysteresis;
     }
 
+    double getHysteresis()
+    {
+        return hysteresis;
+    }
+
     enum output_t {OFF, ON};
     output_t getOutput(const double Tsens);
 
