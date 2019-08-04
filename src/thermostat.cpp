@@ -1,4 +1,4 @@
-#include <temperature_controller.hpp>
+#include <thermostat.hpp>
 
 TemperatureController::output_t TemperatureController::getOutput(const double Tsens)
 {

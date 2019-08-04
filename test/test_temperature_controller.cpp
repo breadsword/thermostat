@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include <temperature_controller.hpp>
+#include <thermostat.hpp>
 
 class test_temperature_controller : public QObject
 {

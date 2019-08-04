@@ -6,7 +6,7 @@ SET(CMAKE_CXX_STANDARD 14)
 INCLUDE_DIRECTORIES(${CURRENT_SOURCE_PATH})
 
 LIST(APPEND LIB_SOURCES
-    src/temperature_controller.hpp
+    src/thermostat.hpp
     src/thermostat.cpp
     )
 
