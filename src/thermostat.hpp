@@ -29,7 +29,7 @@ public:
 
 private:
     double target_temperature = 25.0;
-    double hysteresis = 0.0;
+    double hysteresis = 0.5;
     bool outputIsOn = false;
 };
 
