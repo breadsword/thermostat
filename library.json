@@ -1,0 +1,11 @@
+{
+    "name": "thermostat",
+    "version": "1.0",
+    "description": "Single class thermostat logic with hysteresis",
+    "keywords": "c++",
+    "Repository": {
+        "type": "git",
+        "url": "https://github.com/breadsword/thermostat.git"
+    },
+    "license": "BSD-3-Clause",
+}
